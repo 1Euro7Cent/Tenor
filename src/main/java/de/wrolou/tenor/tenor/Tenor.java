@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 public class Tenor {
 
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "Tenor";
+    public static final String MODID = "tenor";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "Tenor" namespace
