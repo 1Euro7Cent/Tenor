@@ -1,4 +1,4 @@
-package de.wrolou.tenor.tenor;
+package de.wrolou.tenor;
 
 import org.slf4j.Logger;
 
