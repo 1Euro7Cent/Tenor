@@ -7,7 +7,7 @@ group = 'de.wrolou.tenor'
 version = '1.19-0.0.1-SNAPSHOT'
 
 java {
-    archivesBaseName = 'Tenor'
+    archivesBaseName = 'tenor'
     toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
@@ -65,7 +65,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'Tenor'
+            property 'forge.enabledGameTestNamespaces', 'tenor'
 
             mods {
                 tenor {
@@ -84,7 +84,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'Tenor'
+            property 'forge.enabledGameTestNamespaces', 'tenor'
 
             mods {
                 tenor {
