@@ -1,4 +1,4 @@
-package de.wrolou.tenor.tenor;
+package de.wrolou.tenor;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
