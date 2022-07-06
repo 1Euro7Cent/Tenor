@@ -26,7 +26,7 @@ public class CommandHandler {
                 event.setCanceled(true);
                 String calling = command.substring(c.getPrefix().length());
                 if (calling.equals(c.getCalling())) {
-                    c.run(command);
+                    c.run(command, event, player);
                     run = true;
                 }
             }
