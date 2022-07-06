@@ -46,5 +46,5 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: ${{steps.github_release.outputs.changelog}}
-        files: build/libs/tenor-${{ env.RELEASE_VERSION }}.jar
+        files: /home/runner/work/Tenor/Tenor/build/libs/tenor-${{ env.RELEASE_VERSION }}.jar
         
