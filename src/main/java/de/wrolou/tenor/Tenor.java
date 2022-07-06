@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import de.wrolou.tenor.commands.AstarTest;
 import de.wrolou.tenor.commands.TestCommand;
 import de.wrolou.tenor.handlers.CommandHandler;
 import net.minecraft.client.Minecraft;
@@ -40,6 +41,7 @@ public class Tenor {
 
         this.commandHandler = new CommandHandler();
         this.commandHandler.registerCommand(new TestCommand(this.commandHandler));
+        this.commandHandler.registerCommand(new AstarTest(this.commandHandler));
 
     }
 

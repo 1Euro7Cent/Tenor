@@ -2,6 +2,8 @@ package de.wrolou.tenor.commands;
 
 import de.wrolou.tenor.Tenor;
 import de.wrolou.tenor.handlers.CommandHandler;
+import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.client.event.ClientChatEvent;
 
 public class TestCommand extends Command {
 
@@ -15,7 +17,7 @@ public class TestCommand extends Command {
     }
 
     @Override
-    public void run(String command) {
+    public void run(String command, ClientChatEvent event, Player player) {
         Tenor.LOGGER.info("Command test called");
 
     }
