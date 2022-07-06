@@ -17,7 +17,6 @@ public class TestCommand extends Command {
     @Override
     public void run(String command) {
         Tenor.LOGGER.info("Command test called");
-        Tenor.LOGGER.info("ASD");
 
     }
 
