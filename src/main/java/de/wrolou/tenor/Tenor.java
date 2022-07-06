@@ -4,7 +4,10 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import de.wrolou.tenor.commands.TestCommand;
+import de.wrolou.tenor.handlers.CommandHandler;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -23,7 +26,8 @@ public class Tenor {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "tenor";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
+    private CommandHandler commandHandler;
 
     public Tenor() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -33,12 +37,23 @@ public class Tenor {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        this.commandHandler = new CommandHandler();
+        this.commandHandler.registerCommand(new TestCommand(this.commandHandler));
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+    }
+
+    @SubscribeEvent
+    public void onPlayerChat(net.minecraftforge.client.event.ClientChatEvent event) {
+        String text = event.getMessage();
+        Player player = Minecraft.getInstance().player;
+        commandHandler.handleCommand(text, event, player);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
